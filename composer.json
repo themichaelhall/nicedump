@@ -1,0 +1,35 @@
+{
+  "name": "nicedump/nicedump",
+  "description": "Dump a PHP variable in NiceDump format.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "nice",
+    "dump",
+    "php"
+  ],
+  "authors": [
+    {
+      "name": "Michael Hall",
+      "homepage": "https://michaelhall.se/"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NiceDump\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NiceDump\\Tests\\": "tests"
+    }
+  }
+}
