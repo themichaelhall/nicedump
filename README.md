@@ -8,11 +8,11 @@
 [![Latest Stable Version](https://poser.pugx.org/nicedump/nicedump/v/stable)](https://packagist.org/packages/nicedump/nicedump)
 [![Total Downloads](https://poser.pugx.org/nicedump/nicedump/downloads)](https://packagist.org/packages/nicedump/nicedump)
 
-Dump a PHP variable according to the [NiceDump format specification](https://nicedump.net/). 
+Dump a PHP variable according to the [NiceDump format specification](https://nicedump.net/).
 
 ## Requirements
 
-- PHP >= 7.1
+- PHP >= 7.3
 
 ## Install with composer
 
@@ -89,7 +89,7 @@ nice_dump_html($var, 'var', 'This is my variable');
 
 ### Custom serialization
 
-The NiceDump serialization can be customized for a class by implementing the ```NiceDumpSerializable``` interface and the ```niceDumpSerialize()``` method: 
+The NiceDump serialization can be customized for a class by implementing the ```NiceDumpSerializable``` interface and the ```niceDumpSerialize()``` method:
 
 ``` php
 <?php
