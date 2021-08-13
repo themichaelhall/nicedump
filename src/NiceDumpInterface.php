@@ -1,9 +1,11 @@
 <?php
+
 /**
  * This file is a part of the nicedump package.
  *
  * Read more at https://github.com/themichaelhall/nicedump
  */
+
 declare(strict_types=1);
 
 namespace NiceDump;
@@ -20,168 +22,168 @@ interface NiceDumpInterface
      *
      * @since 1.0.0
      */
-    const PARAMETER_COMMENT = 'comment';
+    public const PARAMETER_COMMENT = 'comment';
 
     /**
      * Is static parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_IS_STATIC = 'isStatic';
+    public const PARAMETER_IS_STATIC = 'isStatic';
 
     /**
      * Items parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_ITEMS = 'items';
+    public const PARAMETER_ITEMS = 'items';
 
     /**
      * Key parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_KEY = 'key';
+    public const PARAMETER_KEY = 'key';
 
     /**
      * Name parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_NAME = 'name';
+    public const PARAMETER_NAME = 'name';
 
     /**
      * Relation parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_REL = 'rel';
+    public const PARAMETER_REL = 'rel';
 
     /**
      * Size parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_SIZE = 'size';
+    public const PARAMETER_SIZE = 'size';
 
     /**
      * Type parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_TYPE = 'type';
+    public const PARAMETER_TYPE = 'type';
 
     /**
      * Type name parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_TYPE_NAME = 'typeName';
+    public const PARAMETER_TYPE_NAME = 'typeName';
 
     /**
      * Value parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_VALUE = 'value';
+    public const PARAMETER_VALUE = 'value';
 
     /**
      * Visibility parameter name.
      *
      * @since 1.0.0
      */
-    const PARAMETER_VISIBILITY = 'visibility';
+    public const PARAMETER_VISIBILITY = 'visibility';
 
     /**
      * Array type value.
      *
      * @since 1.0.0
      */
-    const TYPE_ARRAY = 'array';
+    public const TYPE_ARRAY = 'array';
 
     /**
      * Boolean type value.
      *
      * @since 1.0.0
      */
-    const TYPE_BOOL = 'bool';
+    public const TYPE_BOOL = 'bool';
 
     /**
      * Float type value.
      *
      * @since 1.0.0
      */
-    const TYPE_FLOAT = 'float';
+    public const TYPE_FLOAT = 'float';
 
     /**
      * Group type value.
      *
      * @since 1.0.0
      */
-    const TYPE_GROUP = '_group_';
+    public const TYPE_GROUP = '_group_';
 
     /**
      * Integer type value.
      *
      * @since 1.0.0
      */
-    const TYPE_INT = 'int';
+    public const TYPE_INT = 'int';
 
     /**
      * Null type value.
      *
      * @since 1.0.0
      */
-    const TYPE_NULL = 'null';
+    public const TYPE_NULL = 'null';
 
     /**
      * Object type value.
      *
      * @since 1.0.0
      */
-    const TYPE_OBJECT = 'object';
+    public const TYPE_OBJECT = 'object';
 
     /**
      * Resource type value.
      *
      * @since 1.0.0
      */
-    const TYPE_RESOURCE = 'resource';
+    public const TYPE_RESOURCE = 'resource';
 
     /**
      * String type value.
      *
      * @since 1.0.0
      */
-    const TYPE_STRING = 'string';
+    public const TYPE_STRING = 'string';
 
     /**
      * Text type value.
      *
      * @since 1.0.0
      */
-    const TYPE_TEXT = '_text_';
+    public const TYPE_TEXT = '_text_';
 
     /**
      * Private visibility value.
      *
      * @since 1.0.0
      */
-    const VISIBILITY_PRIVATE = 'private';
+    public const VISIBILITY_PRIVATE = 'private';
 
     /**
      * Protected visibility value.
      *
      * @since 1.0.0
      */
-    const VISIBILITY_PROTECTED = 'protected';
+    public const VISIBILITY_PROTECTED = 'protected';
 
     /**
      * Public visibility value.
      *
      * @since 1.0.0
      */
-    const VISIBILITY_PUBLIC = 'public';
+    public const VISIBILITY_PUBLIC = 'public';
 
     /**
      * Returns the NiceDump as a string.

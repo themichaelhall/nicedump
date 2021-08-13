@@ -85,7 +85,9 @@ class NiceDumpTest extends TestCase
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
             chunk_split(base64_encode($expectedJson), 120, PHP_EOL) .
-            '=====END NICE-DUMP=====', $niceDump->__toString());
+            '=====END NICE-DUMP=====',
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -131,7 +133,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -149,7 +152,8 @@ class NiceDumpTest extends TestCase
                 '{"name":"My name","type":"string","value":"My value","size":8}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -167,7 +171,8 @@ class NiceDumpTest extends TestCase
                 '{"name":"My name","comment":"My comment","type":"string","value":"My value","size":8}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -196,7 +201,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -216,7 +222,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -243,7 +250,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -269,7 +277,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -293,7 +302,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -317,7 +327,8 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -335,7 +346,8 @@ class NiceDumpTest extends TestCase
                 '{"type":"resource","typeName":"stream"}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 
     /**
@@ -359,6 +371,7 @@ class NiceDumpTest extends TestCase
                 ']}'
             ), 120, PHP_EOL) .
             '=====END NICE-DUMP=====',
-            $niceDump->__toString());
+            $niceDump->__toString()
+        );
     }
 }

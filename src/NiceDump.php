@@ -1,9 +1,11 @@
 <?php
+
 /**
  * This file is a part of the nicedump package.
  *
  * Read more at https://github.com/themichaelhall/nicedump
  */
+
 declare(strict_types=1);
 
 namespace NiceDump;
