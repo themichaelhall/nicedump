@@ -95,7 +95,7 @@ class NiceDumpTest extends TestCase
      *
      * @return array
      */
-    public function scalarsDataProvider()
+    public function scalarsDataProvider(): array
     {
         return [
             [null, '{"type":"null"}'],

@@ -166,8 +166,8 @@ class NiceDump implements NiceDumpInterface
         $items = [];
         foreach ($var as $key => $value) {
             $items[] = [
-                self::PARAMETER_KEY   => self::buildContent([], $key, $previousObjects, ''),
-                self::PARAMETER_VALUE => self::buildContent([], $value, $previousObjects, ''),
+                self::PARAMETER_KEY   => self::buildContent([], $key, $previousObjects),
+                self::PARAMETER_VALUE => self::buildContent([], $value, $previousObjects),
             ];
         }
 
@@ -187,7 +187,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return array The content.
      */
-    private static function buildObjectContent(array $content, $var, ReflectionClass $reflectionClass, array $previousObjects, bool $isParentClass): array
+    private static function buildObjectContent(array $content, object $var, ReflectionClass $reflectionClass, array $previousObjects, bool $isParentClass): array
     {
         if ($var instanceof NiceDumpSerializable) {
             return array_merge($content, $var->niceDumpSerialize());
@@ -275,7 +275,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return array The content.
      */
-    private static function buildPropertiesContent($var, array $reflectionProperties, array $previousObjects): array
+    private static function buildPropertiesContent(object $var, array $reflectionProperties, array $previousObjects): array
     {
         $items = [];
 
@@ -297,7 +297,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return array The content.
      */
-    private static function buildPropertyContent($var, ReflectionProperty $reflectionProperty, array $previousObjects): array
+    private static function buildPropertyContent(object $var, ReflectionProperty $reflectionProperty, array $previousObjects): array
     {
         $content = [];
 
@@ -359,7 +359,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return string|null The string value for the object or null if no string value exists.
      */
-    private static function getStringValue($var): ?string
+    private static function getStringValue(object $var): ?string
     {
         if (method_exists($var, '__toString')) {
             return $var->__toString();
