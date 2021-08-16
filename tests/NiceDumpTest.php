@@ -206,7 +206,7 @@ class NiceDumpTest extends TestCase
     }
 
     /**
-     * Test for a object that can be represented as a string.
+     * Test for an object that can be represented as a string.
      */
     public function testStringableObject()
     {
