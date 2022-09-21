@@ -10,7 +10,7 @@ Dump a PHP variable according to the [NiceDump format specification](https://nic
 
 ## Requirements
 
-- PHP >= 7.3
+- PHP >= 8.0
 
 ## Install with composer
 
