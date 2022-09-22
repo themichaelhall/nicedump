@@ -10,12 +10,14 @@ declare(strict_types=1);
 
 namespace NiceDump;
 
+use Stringable;
+
 /**
  * Interface for NiceDump class.
  *
  * @since 1.0.0
  */
-interface NiceDumpInterface
+interface NiceDumpInterface extends Stringable
 {
     /**
      * Comment parameter name.
@@ -184,13 +186,4 @@ interface NiceDumpInterface
      * @since 1.0.0
      */
     public const VISIBILITY_PUBLIC = 'public';
-
-    /**
-     * Returns the NiceDump as a string.
-     *
-     * @since 1.0.0
-     *
-     * @return string The NiceDump as a string.
-     */
-    public function __toString(): string;
 }
