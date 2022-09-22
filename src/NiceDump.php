@@ -38,7 +38,7 @@ class NiceDump implements NiceDumpInterface
         $result = new self();
 
         $oldSubstituteCharacter = mb_substitute_character();
-        mb_substitute_character(0xfffd);
+        mb_substitute_character(0xFFFD);
 
         $result->content = $result::buildContent([], $var, [], $name, $comment);
 
