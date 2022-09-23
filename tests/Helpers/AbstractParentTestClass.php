@@ -20,5 +20,5 @@ abstract class AbstractParentTestClass
     /**
      * @var int
      */
-    private $Foo;
+    private int $Foo;
 }

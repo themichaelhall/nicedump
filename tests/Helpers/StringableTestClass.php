@@ -30,5 +30,5 @@ class StringableTestClass
     /**
      * @var string
      */
-    private $label;
+    private string $label;
 }

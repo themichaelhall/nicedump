@@ -30,5 +30,5 @@ class Recursive1TestClass
     /**
      * @var Recursive2TestClass
      */
-    private $recursive2;
+    private Recursive2TestClass $recursive2;
 }

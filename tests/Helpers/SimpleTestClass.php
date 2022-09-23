@@ -26,30 +26,30 @@ class SimpleTestClass
     /**
      * @var int
      */
-    public $publicVar;
+    public int $publicVar;
 
     /**
      * @var string
      */
-    protected $protectedVar;
+    protected string $protectedVar;
 
     /**
      * @var array
      */
-    private $privateVar;
+    private array $privateVar;
 
     /**
-     * @var null
+     * @var null|object
      */
-    public static $publicStaticVar;
+    public static ?object $publicStaticVar;
 
     /**
      * @var bool
      */
-    protected static $protectedStaticVar;
+    protected static bool $protectedStaticVar;
 
     /**
      * @var string
      */
-    private static $privateStaticVar;
+    private static string $privateStaticVar;
 }

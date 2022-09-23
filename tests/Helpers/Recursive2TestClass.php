@@ -28,5 +28,5 @@ class Recursive2TestClass
     /**
      * @var null|Recursive1TestClass
      */
-    public $recursive1;
+    public ?Recursive1TestClass $recursive1;
 }

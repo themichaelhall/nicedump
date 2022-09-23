@@ -78,7 +78,7 @@ class NiceDumpTest extends TestCase
      * @param mixed  $var          The variable to debug.
      * @param string $expectedJson The expected Json result.
      */
-    public function testScalars($var, string $expectedJson)
+    public function testScalars(mixed $var, string $expectedJson)
     {
         $niceDump = NiceDump::create($var);
 
@@ -123,15 +123,19 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"array","size":2,"items":[' .
-                '{"key":{"type":"string","value":"Foo","size":3},"value":{"type":"string","value":"Bar","size":3}},' .
-                '{"key":{"type":"int","value":"1"},"value":{"type":"array","size":2,"items":[' .
-                '{"key":{"type":"int","value":"0"},"value":{"type":"int","value":"2"}},' .
-                '{"key":{"type":"string","value":"Baz","size":3},"value":{"type":"bool","value":"false"}}' .
-                ']}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"array","size":2,"items":[' .
+                    '{"key":{"type":"string","value":"Foo","size":3},"value":{"type":"string","value":"Bar","size":3}},' .
+                    '{"key":{"type":"int","value":"1"},"value":{"type":"array","size":2,"items":[' .
+                    '{"key":{"type":"int","value":"0"},"value":{"type":"int","value":"2"}},' .
+                    '{"key":{"type":"string","value":"Baz","size":3},"value":{"type":"bool","value":"false"}}' .
+                    ']}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -148,9 +152,13 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"name":"My name","type":"string","value":"My value","size":8}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"name":"My name","type":"string","value":"My value","size":8}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -167,9 +175,13 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"name":"My name","comment":"My comment","type":"string","value":"My value","size":8}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"name":"My name","comment":"My comment","type":"string","value":"My value","size":8}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -186,20 +198,24 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\SimpleTestClass","items":[' .
-                '{"value":{"visibility":"public","name":"publicVar","type":"int","value":"1"}},' .
-                '{"value":{"visibility":"protected","name":"protectedVar","type":"string","value":"Foo","size":3}},' .
-                '{"value":{"visibility":"private","name":"privateVar","type":"array","size":1,"items":[' .
-                '{"key":{"type":"string","value":"Bar","size":3},"value":{"type":"float","value":"0.5"}}' .
-                ']}},' .
-                '{"value":{"type":"_group_","value":"static properties","items":[' .
-                '{"value":{"isStatic":true,"visibility":"public","name":"publicStaticVar","type":"null"}},' .
-                '{"value":{"isStatic":true,"visibility":"protected","name":"protectedStaticVar","type":"bool","value":"false"}},' .
-                '{"value":{"isStatic":true,"visibility":"private","name":"privateStaticVar","type":"string","value":"Baz","size":3}}' .
-                ']}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\SimpleTestClass","items":[' .
+                    '{"value":{"visibility":"public","name":"publicVar","type":"int","value":"1"}},' .
+                    '{"value":{"visibility":"protected","name":"protectedVar","type":"string","value":"Foo","size":3}},' .
+                    '{"value":{"visibility":"private","name":"privateVar","type":"array","size":1,"items":[' .
+                    '{"key":{"type":"string","value":"Bar","size":3},"value":{"type":"float","value":"0.5"}}' .
+                    ']}},' .
+                    '{"value":{"type":"_group_","value":"static properties","items":[' .
+                    '{"value":{"isStatic":true,"visibility":"public","name":"publicStaticVar","type":"null"}},' .
+                    '{"value":{"isStatic":true,"visibility":"protected","name":"protectedStaticVar","type":"bool","value":"false"}},' .
+                    '{"value":{"isStatic":true,"visibility":"private","name":"privateStaticVar","type":"string","value":"Baz","size":3}}' .
+                    ']}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -216,11 +232,15 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\StringableTestClass","value":"Hello from Foo","items":[' .
-                '{"value":{"visibility":"private","name":"label","type":"string","value":"Foo","size":3}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\StringableTestClass","value":"Hello from Foo","items":[' .
+                    '{"value":{"visibility":"private","name":"label","type":"string","value":"Foo","size":3}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -237,18 +257,22 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\ChildTestClass","value":"Foo=2","items":[' .
-                '{"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\ParentTestClass","rel":"parent","items":[' .
-                '{"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\AbstractParentTestClass","rel":"parent","items":[' .
-                '{"value":{"visibility":"private","name":"Foo","type":"int","value":"1"}}' .
-                ']}},' .
-                '{"value":{"visibility":"private","name":"Foo","type":"int","value":"2"}},' .
-                '{"value":{"visibility":"public","name":"Bar","type":"int","value":"3"}}' .
-                ']}},' .
-                '{"value":{"visibility":"public","name":"Baz","type":"int","value":"4"}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\ChildTestClass","value":"Foo=2","items":[' .
+                    '{"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\ParentTestClass","rel":"parent","items":[' .
+                    '{"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\AbstractParentTestClass","rel":"parent","items":[' .
+                    '{"value":{"visibility":"private","name":"Foo","type":"int","value":"1"}}' .
+                    ']}},' .
+                    '{"value":{"visibility":"private","name":"Foo","type":"int","value":"2"}},' .
+                    '{"value":{"visibility":"public","name":"Bar","type":"int","value":"3"}}' .
+                    ']}},' .
+                    '{"value":{"visibility":"public","name":"Baz","type":"int","value":"4"}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -269,13 +293,17 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"array","size":3,"items":[' .
-                '{"key":{"type":"int","value":"0"},"value":{"type":"object","typeName":"DateTime","value":"2000-01-02 03:04:05 +0200"}},' .
-                '{"key":{"type":"int","value":"1"},"value":{"type":"object","typeName":"DateTimeImmutable","value":"2006-07-08 09:10:11 -0400"}},' .
-                '{"key":{"type":"int","value":"2"},"value":{"type":"object","typeName":"DateInterval","value":"1y 2m 3d 4h 5m 6s"}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"array","size":3,"items":[' .
+                    '{"key":{"type":"int","value":"0"},"value":{"type":"object","typeName":"DateTime","value":"2000-01-02 03:04:05 +0200"}},' .
+                    '{"key":{"type":"int","value":"1"},"value":{"type":"object","typeName":"DateTimeImmutable","value":"2006-07-08 09:10:11 -0400"}},' .
+                    '{"key":{"type":"int","value":"2"},"value":{"type":"object","typeName":"DateInterval","value":"1y 2m 3d 4h 5m 6s"}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -294,13 +322,17 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive1TestClass","value":"Recursive 1","items":[' .
-                '{"value":{"visibility":"private","name":"recursive2","type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive2TestClass","value":"Recursive 2","items":[' .
-                '{"value":{"visibility":"public","name":"recursive1","type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive1TestClass","value":"Recursive 1","comment":"recursion"}}' .
-                ']}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive1TestClass","value":"Recursive 1","items":[' .
+                    '{"value":{"visibility":"private","name":"recursive2","type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive2TestClass","value":"Recursive 2","items":[' .
+                    '{"value":{"visibility":"public","name":"recursive1","type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\Recursive1TestClass","value":"Recursive 1","comment":"recursion"}}' .
+                    ']}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -320,12 +352,16 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"array","size":2,"items":[' .
-                '{"key":{"type":"int","value":"0"},"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\EmptyTestClass"}},' .
-                '{"key":{"type":"int","value":"1"},"value":{"type":"array","size":0}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"array","size":2,"items":[' .
+                    '{"key":{"type":"int","value":"0"},"value":{"type":"object","typeName":"NiceDump\\\\Tests\\\\Helpers\\\\EmptyTestClass"}},' .
+                    '{"key":{"type":"int","value":"1"},"value":{"type":"array","size":0}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -342,9 +378,13 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"type":"resource","typeName":"stream"}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"type":"resource","typeName":"stream"}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );
@@ -364,12 +404,16 @@ class NiceDumpTest extends TestCase
 
         self::assertSame(
             '=====BEGIN NICE-DUMP=====' . PHP_EOL .
-            chunk_split(base64_encode(
-                '{"name":"Group","comment":"This is my group","type":"_group_","value":"Group items","items":[' .
-                '{"value":{"type":"_text_","value":"Foo"}},' .
-                '{"value":{"type":"_text_","value":"Bar"}}' .
-                ']}'
-            ), 120, PHP_EOL) .
+            chunk_split(
+                base64_encode(
+                    '{"name":"Group","comment":"This is my group","type":"_group_","value":"Group items","items":[' .
+                    '{"value":{"type":"_text_","value":"Foo"}},' .
+                    '{"value":{"type":"_text_","value":"Bar"}}' .
+                    ']}'
+                ),
+                120,
+                PHP_EOL
+            ) .
             '=====END NICE-DUMP=====',
             $niceDump->__toString()
         );

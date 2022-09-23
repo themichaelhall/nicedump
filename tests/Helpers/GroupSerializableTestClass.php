@@ -46,5 +46,5 @@ class GroupSerializableTestClass implements NiceDumpSerializable
     /**
      * @var NiceDumpSerializable[] The items.
      */
-    private $items;
+    private array $items;
 }

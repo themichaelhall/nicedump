@@ -22,5 +22,5 @@ class ChildTestClass extends ParentTestClass
     /**
      * @var int
      */
-    public $Baz;
+    public int $Baz;
 }

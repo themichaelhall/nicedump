@@ -33,7 +33,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return NiceDumpInterface The created NiceDump.
      */
-    public static function create($var, string $name = '', string $comment = ''): NiceDumpInterface
+    public static function create(mixed $var, string $name = '', string $comment = ''): NiceDumpInterface
     {
         $result = new self();
 
@@ -73,7 +73,7 @@ class NiceDump implements NiceDumpInterface
      *
      * @return array The content.
      */
-    private static function buildContent(array $content, $var, array $previousObjects, string $name = '', string $comment = ''): array
+    private static function buildContent(array $content, mixed $var, array $previousObjects, string $name = '', string $comment = ''): array
     {
         if ($name !== '') {
             $content[self::PARAMETER_NAME] = self::fixString($name);
@@ -377,7 +377,7 @@ class NiceDump implements NiceDumpInterface
     }
 
     /**
-     * @var array My content.
+     * @var array The content.
      */
-    private $content;
+    private array $content;
 }

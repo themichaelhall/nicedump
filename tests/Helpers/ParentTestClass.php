@@ -31,10 +31,10 @@ class ParentTestClass extends AbstractParentTestClass
     /**
      * @var int
      */
-    private $Foo;
+    private int $Foo;
 
     /**
      * @var int
      */
-    public $Bar;
+    public int $Bar;
 }
