@@ -1,3 +1,5 @@
+## Unreleased
+
 ## [2.0.0] - 2022-09-26
 - Changed required PHP version to >= 8.0.
 
